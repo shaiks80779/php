@@ -1,28 +1,28 @@
 <?php
-$a = 1;
-$t = 10;
-$l = 10;
-if (isset($_GET['t'])) {
-	$t = $_GET['t'];
+$start = 1;
+$end = 10;
+$lines = 10;
+if (isset($_GET['start'])) {
+	$start = $_GET['start'];
 }
-if (isset($_GET['a'])) {
-	$a = $_GET['a'];
+if (isset($_GET['end'])) {
+	$end = $_GET['end'];
 }
-if (isset($_GET['l'])) {
-	$l = $_GET['l'];
+if (isset($_GET['lines'])) {
+	$lines = $_GET['lines'];
 }
 ?>
 <h1>Dynamic Multiplication Tables using PHP HTML CSS</h1>
 <form>
-	Start Table:<input type="number" name="a" required value="<?php echo $a; ?>">
-	End Table:<input type="number" name="t" required value="<?php echo $t; ?>">
-	Lines:<input type="number" name="l" required value="<?php echo $l; ?>">
+	Start Table:<input type="number" name="start" required value="<?php echo $start; ?>">
+	End Table:<input type="number" name="end" required value="<?php echo $end; ?>">
+	Lines:<input type="number" name="lines" required value="<?php echo $lines; ?>">
 	<button>Generate</button>
 </form>
 <?php
-for ($n=$a; $n <= $t; $n++) { 
+for ($n=$start; $n <= $end; $n++) { 
 	echo '<div class="table"><div>';
-	for ($i=1; $i <= $l; $i++) { 
+	for ($i=1; $i <= $lines; $i++) { 
 		echo '<p>' . $n .' x '. $i . ' = ' . ($n*$i) .'</p>';
 	}
 	echo '</div></div>';

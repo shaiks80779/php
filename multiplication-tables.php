@@ -1,8 +1,12 @@
 <?php
+$a = 1;
 $t = 10;
 $l = 10;
 if (isset($_GET['t'])) {
 	$t = $_GET['t'];
+}
+if (isset($_GET['a'])) {
+	$a = $_GET['a'];
 }
 if (isset($_GET['l'])) {
 	$l = $_GET['l'];
@@ -10,12 +14,13 @@ if (isset($_GET['l'])) {
 ?>
 <h1>Dynamic Multiplication Tables using PHP HTML CSS</h1>
 <form>
-	Tables:<input type="number" name="t" required value="<?php echo $t; ?>">
+	Start Table:<input type="number" name="a" required value="<?php echo $a; ?>">
+	End Table:<input type="number" name="t" required value="<?php echo $t; ?>">
 	Lines:<input type="number" name="l" required value="<?php echo $l; ?>">
 	<button>Generate</button>
 </form>
 <?php
-for ($n=1; $n <= $t; $n++) { 
+for ($n=$a; $n <= $t; $n++) { 
 	echo '<div class="table"><div>';
 	for ($i=1; $i <= $l; $i++) { 
 		echo '<p>' . $n .' x '. $i . ' = ' . ($n*$i) .'</p>';

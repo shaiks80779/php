@@ -2,14 +2,16 @@
 $start = 1;
 $end = 10;
 $lines = 10;
-if (isset($_GET['start'])) {
-	$start = $_GET['start'];
-}
-if (isset($_GET['end'])) {
-	$end = $_GET['end'];
-}
-if (isset($_GET['lines'])) {
-	$lines = $_GET['lines'];
+if (isset($_GET['submit'])) {
+	if ($_GET['start']) {
+		$start = $_GET['start'];
+	}
+	if ($_GET['end']) {
+		$end = $_GET['end'];
+	}
+	if ($_GET['lines'] > 0) {
+		$lines = $_GET['lines'];
+	}
 }
 ?>
 <h1>Dynamic Multiplication Tables using PHP HTML CSS</h1>
@@ -17,7 +19,7 @@ if (isset($_GET['lines'])) {
 	Start Table:<input type="number" name="start" required value="<?php echo $start; ?>">
 	End Table:<input type="number" name="end" required value="<?php echo $end; ?>">
 	Lines:<input type="number" name="lines" required value="<?php echo $lines; ?>">
-	<button>Generate</button>
+	<input type="submit" name="submit" value="Generate">
 </form>
 <?php
 for ($n=$start; $n <= $end; $n++) { 

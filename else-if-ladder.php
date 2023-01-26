@@ -1,5 +1,4 @@
 <?php
-error_reporting(E_ERROR | E_PARSE);
 $x = 52;
 if ($x > 50) {
 	echo 'Breakfast';

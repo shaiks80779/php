@@ -10,8 +10,11 @@ if (isset($_GET['add'])) {
 	$bookname = $_GET['bookname'];
 	$price = $_GET['price'];
 	$year = $_GET['year'];
-	$sql = "INSERT INTO books (bookname,price,year) VALUES ('$bookname',$price,$year)";
-	$conn->query($sql);
-	echo "Book added";
+	$sql = "INSERT INTO books (bookname,price,year) VALUES ('$bookname','$price','$year')";
+	if($conn->query($sql)===true){
+		echo "Book added";
+	} else {
+		echo "Error: ".$conn->error;
+	}
 }
 ?>
